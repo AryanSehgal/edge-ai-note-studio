@@ -45,6 +45,8 @@ Two implementation details explain these numbers:
 - **Total Blocking Time of 0 ms** — all model inference (Whisper ASR and the LLM) runs inside dedicated [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), so the main thread never blocks, even mid-transcription.
 - **Tiny app shell** — the initial JavaScript payload is ~114 KB (gzipped). The "network payload" figure Lighthouse reports for a first visit is dominated by the *on-demand* model weight downloads (Whisper + the LLM), which stream in the background, are cached by the browser, and never recur on subsequent loads.
 
+Download the complete [lighthouse report](https://github.com/user-attachments/files/32466330/Lighthouse.report.pdf) here.
+
 ---
 
 ## Key highlights

@@ -1,0 +1,6 @@
+{
+  "name": "Edge AI Screen & Audio Note Studio",
+  "description": "Privacy-first screen and audio capture studio with 100% client-side WebGPU/WASM Whisper transcription and an on-device pretrained LLM for headings and summaries. Zero external API calls.",
+  "requestFramePermissions": ["microphone", "camera", "display-capture"],
+  "majorCapabilities": ["CLIENT_SIDE_ONNX_SPEECH_RECOGNITION", "CLIENT_SIDE_ONNX_LLM_SUMMARIZATION"]
+}

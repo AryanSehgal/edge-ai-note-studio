@@ -101,29 +101,29 @@ Download the complete [lighthouse report](https://github.com/user-attachments/fi
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        Browser (client only)                     │
-│                                                                  │
-│  Capture / Upload                                                │
-│   Screen + mic / tab audio / file upload / samples               │
-│        │                                                         │
-│        ▼                                                         │
-│  Web Audio API ──► decode & resample to 16 kHz mono              │
-│        │                                                         │
-│        ▼                    ┌──────────────────────────┐         │
-│  ┌─────────────┐  postMessage│  transcriber.worker.ts   │         │
-│  │  React App  │◄───────────►│  Whisper (ONNX) ASR      │         │
-│  │  (main thr) │             │  WebGPU │ WASM fallback  │         │
-│  └──────┬──────┘             └──────────────────────────┘         │
-│         │                     ┌──────────────────────────┐         │
-│         │      postMessage    │  llm.worker.ts          │         │
-│         │◄───────────────────►│  flan-t5-small           │         │
-│         │                     │  text2text-generation    │         │
-│         │                     └──────────────────────────┘         │
-│         ▼                                                        │
-│  Transcript segments + Markdown notes + audio blob               │
-│         │                                                        │
-│         ▼                                                        │
-│  IndexedDB (sessions persist across restarts)                    │
+│                        Browser (client only)                    │
+│                                                                 │
+│  Capture / Upload                                               │
+│   Screen + mic / tab audio / file upload / samples              │
+│        │                                                        │
+│        ▼                                                        │
+│  Web Audio API ──► decode & resample to 16 kHz mono             │
+│        │                                                        │
+│        ▼                     ┌──────────────────────────┐       │
+│  ┌─────────────┐  postMessage│  transcriber.worker.ts   │       │
+│  │  React App  │◄───────────►│  Whisper (ONNX) ASR      │       │
+│  │  (main thr) │             │  WebGPU │ WASM fallback  │       │
+│  └──────┬──────┘             └──────────────────────────┘       │
+│         │                     ┌──────────────────────────┐      │
+│         │      postMessage    │  llm.worker.ts           │      │
+│         │◄───────────────────►│  flan-t5-small           │      │
+│         │                     │  text2text-generation    │      │
+│         │                     └──────────────────────────┘      │
+│         ▼                                                       │
+│  Transcript segments + Markdown notes + audio blob              │
+│         │                                                       │
+│         ▼                                                       │
+│  IndexedDB (sessions persist across restarts)                   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
